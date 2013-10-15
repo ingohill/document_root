@@ -53,7 +53,8 @@
             <h2>Gestaltung</h2>
             <ul>
                 <li>
-                	<select name="" onchange="set_cookie('style', this.value);window.location.reload();">
+                	<select name="" onchange="if(this.value!=''){set_cookie('style', this.value);window.location.reload();}">
+                        <option value="">Bitte w&auml;hlen</option>
                 		<option value="light">Hell</option>
                 		<option value="dark">Dunkel</option>
                 		<option value="fancy">Modern</option>
@@ -63,7 +64,8 @@
 			<h2>Projekte</h2>
 			<ul>
                 <li>
-                	<select name="" onchange="set_cookie('gradient', this.value);window.location.reload();">
+                	<select name="" onchange="if(this.value!=''){set_cookie('gradient', this.value);window.location.reload();}">
+                        <option value="">Bitte w&auml;hlen</option>
                 		<option value="gb">Gr&uuml;n > Schwarz</option>
                 		<option value="gr">Gr&uuml;n > Rot</option>
 	                </select>
