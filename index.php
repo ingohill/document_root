@@ -184,7 +184,8 @@ document.write('<link rel="stylesheet" href="./index.' + read_cookie('style') + 
         if( is_dir( $dir . '/htdocs')){
             $url = $dir . '/htdocs';
         }
-        $wp_admin = is_dir( $url . '/wp-admin') ? (' [<a class="wp" href="' . $url . '/wp-admin">WP</a>]') : '';
+        $wp_admin = is_dir( $url . '/wp-admin') ? (' [<a href="' . $url . '/wp-admin">WP</a>]') : '';
+        $mage_admin = is_dir( $url . '/admin') ? (' [<a href="' . $url . '/admin">Mage</a>]') : '';
         echo '<div class="box" style="border-color: ' . getDirColorHexString(count($dirs), $i) . '"><h2><a href="/' . $url . '">' . $dir . '</a>' . $wp_admin . '</h2></div>'."\n";
         $i++;
     }
