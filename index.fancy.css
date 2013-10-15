@@ -2,12 +2,12 @@ body {
     margin: 0;
     padding: 20px;
     color: #333;
- 	background-color: #1a82f7;
-	background: -webkit-gradient(linear, left top, right top, from(#333333), to(#ffffff));
-	background: -webkit-linear-gradient(left, #333333, #ffffff);
-	background: -moz-linear-gradient(left, #333333, #ffffff);
-	background: -ms-linear-gradient(left, #333333, #ffffff);
-	background: -o-linear-gradient(left, #333333, #ffffff);
+ 	background-color: #660000;
+	background: -webkit-gradient(linear, left top, right top, from(#660000), to(#ffffff));
+	background: -webkit-linear-gradient(left, #660000, #ffffff);
+	background: -moz-linear-gradient(left, #660000, #ffffff);
+	background: -ms-linear-gradient(left, #660000, #ffffff);
+	background: -o-linear-gradient(left, #660000, #ffffff);
     font-family: arial;
 }
 .box {
