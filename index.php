@@ -2,54 +2,51 @@
 <head>
 	<title>Auswahl</title>
 	<style>
-		body {
-			margin: 20px; 
-			padding: 0;
-			color: blank;
-			background: #f2f2f2;
-			font-family: arial;
-		}
+	    body {
+    	    margin: 20px; 
+        	padding: 0;
+	        color: blank;
+    	    background: #f2f2f2;
+        	font-family: arial;
+	    }
 		.box {
-			border-top: 5px solid #ff9900;
+	        border-top: 5px solid #ff9900;
 			border-left: 1px solid #ff9900;
 			border-right: 1px solid #ff9900;
 			border-bottom: 1px solid #ff9900;
-			padding: 20px 30px 20px 30px;
+			/* padding: 20px 30px 20px 30px; */
 			margin: 20px 20px 20px 0;
 			background: #999999;
 			float: left;
 		}
-		h2 a,
-		h2 {
-			white-space: nowrap;
-			color: #000000;
-			font-size: 13px;
-		}
-		a,
-		a:visited{
-			text-decoration: none;
-		}
-		
-		a:hover {
-			text-decoration: underline;
-		}
-		
-		.box a:hover {
-			color: #fff;
-		}
-		
-		.box ul {
-			margin-left:0;
-			padding-left:0;
-		}
-		ul li {
-			list-style-type: none;
-			font-size: 11px;
-			margin-left:5px; 
-		}
-		ul li a {
-			color: #000000;
-		}
+		.box:first-of-type {
+        	padding: 20px 30px 20px 30px;
+	    }
+	    h2 a,
+    	h2 {
+        	color: #000000;
+	        font-size: 13px;
+    	    margin: 0;
+	    }
+    	.box h2 a { padding: 30px 30px; 
+        	display: inline-block;
+	    }
+    	a,
+	    a:visited{
+    	    text-decoration: none;
+   		 }
+	    .box ul {
+    	    margin-left:0;
+	        padding-left:0;
+    	}
+	    ul li {
+    	    list-style-type: none;
+    	    font-size: 11px;
+       	 margin-left:5px; 
+	    }
+    	ul li a {
+	        color: #000000;
+    	}
 	</style>
 </head>
 
