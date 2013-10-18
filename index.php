@@ -1,5 +1,25 @@
 <?php
 
+    $style = "light";
+    //	$style = "dark";
+    //	$style = "fancy";
+
+    //	$mode = "blue";
+    //	$mode = "grey";
+    //	$mode = "green";
+    //	$mode = "red";
+    //	$mode = "black";
+    //	$mode = "white";
+    //	$mode = "greenred";
+    $mode = "greenblack";
+
+    //	$mode = "blackwhite";
+    //	$mode = "whiteblack";
+
+    $fontsize = "small";
+    //	$fontsize = "medium";
+    //	$fontsize = "big";
+
     function getDirColorHexString($cnt, $i)
     {
         $mode = $_COOKIE['gradient'];
@@ -98,7 +118,7 @@
 
     if ( $_COOKIE['fontsize'] == '' )
     {
-        $_COOKIE['fontsize'] = 'medium';
+        $_COOKIE['fontsize'] = $fontsize;
     }
 
 ?>
@@ -137,16 +157,18 @@
 			}        
 			
 			if( read_cookie('style') == '' ){
-				set_cookie('style', 'light');
+				set_cookie('style', '<?php echo $style; ?>' );
 			}
             if( read_cookie('fontsize') == '' ){
-                set_cookie('fontsize', 'medium');
+                set_cookie('fontsize', '<?php echo $fontsize; ?>' );
             }            
 			if( read_cookie('gradient') == '' ){
-				set_cookie('gradient', 'gb');
+				set_cookie('gradient', '<?php echo $mode; ?>');
 			}
-			
-			document.write('<link rel="stylesheet" href="./index.' + read_cookie('style') + '.css" type="text/css">');
+			var style = read_cookie('style');
+            if( style == null ) style = '<?php echo $style; ?>';
+            console.log( style );
+			document.write('<link rel="stylesheet" href="./index.' + style + '.css" type="text/css">');
 
         </script>
         <div class="utility box" style="border-color: <?php echo getDirColorHexString(count($dirs), 0); ?>">
@@ -157,46 +179,48 @@
                 <li><a href="http://localhost/MAMP/phpmyadmin.php?lang=en-iso-8859-1&language=English">phpMyAdmin</a></li>
                 <li><a href="http://localhost/MAMP/English/faq.php?language=English">FAQ</a></li>
             </ul>
-            <h3>Hintergund</h3>
-            <ul class="select">
-                <li>
-                	<select name="" onchange="if(this.value!=''){set_cookie('style', this.value);window.location.reload();}">
-                        <option value="">Bitte w&auml;hlen</option>
-                		<option value="light">Hell</option>
-                		<option value="dark">Dunkel</option>
-                		<option value="fancy">Modern</option>
-	                </select>
-				</li>          
-			</ul>
-			<h3>Farben</h3>
-			<ul class="select">
-                <li>
-                	<select name="" onchange="if(this.value!=''){set_cookie('gradient', this.value);window.location.reload();}">
-                        <option value="">Bitte w&auml;hlen</option>
-                		<option value="blue">Blau</option>
-                		<option value="grey">Grau</option>
-						<option value="green">Gr&uuml;n</option>
-						<option value="red">Rot</option>
-						<option value="black">Schwarz</option>                        
-						<option value="white">Wei&szlig;</option>                  						
-						<option value="greenred">Gr&uuml;n > Rot</option>
-                		<option value="greenblack">Gr&uuml;n > Schwarz</option>
-                		<option value="blackwhite">Schwarz > Wei&szlig;</option>
-                		<option value="whiteblack">Wei&szlig; > Schwarz</option>
-	                </select>
-				</li>        				
-            </ul>				
-            <h3>Schriftgr&ouml;&szlig;e</h3>
-            <ul class="select">
-                <li>
-                    <select name="" onchange="if(this.value!=''){set_cookie('fontsize', this.value);window.location.reload();}">
-                        <option value="">Bitte w&auml;hlen</option>
-                        <option value="small">Klein</option>
-                        <option value="medium">Mittel</option>
-                        <option value="big">Gro&szlig;</option>
-                    </select>
-                </li>          
-            </ul>
+            <?php if( $_COOKIE['fontsize'] != '' ) : ?>
+                <h3>Hintergund</h3>
+                <ul class="select">
+                    <li>
+                        <select name="" onchange="if(this.value!=''){set_cookie('style', this.value);window.location.reload();}">
+                            <option value="">Bitte w&auml;hlen</option>
+                            <option value="light">Hell</option>
+                            <option value="dark">Dunkel</option>
+                            <option value="fancy">Modern</option>
+                        </select>
+                    </li>
+                </ul>
+                <h3>Farben</h3>
+                <ul class="select">
+                    <li>
+                        <select name="" onchange="if(this.value!=''){set_cookie('gradient', this.value);window.location.reload();}">
+                            <option value="">Bitte w&auml;hlen</option>
+                            <option value="blue">Blau</option>
+                            <option value="grey">Grau</option>
+                            <option value="green">Gr&uuml;n</option>
+                            <option value="red">Rot</option>
+                            <option value="black">Schwarz</option>
+                            <option value="white">Wei&szlig;</option>
+                            <option value="greenred">Gr&uuml;n > Rot</option>
+                            <option value="greenblack">Gr&uuml;n > Schwarz</option>
+                            <option value="blackwhite">Schwarz > Wei&szlig;</option>
+                            <option value="whiteblack">Wei&szlig; > Schwarz</option>
+                        </select>
+                    </li>
+                </ul>
+                <h3>Schriftgr&ouml;&szlig;e</h3>
+                <ul class="select">
+                    <li>
+                        <select name="" onchange="if(this.value!=''){set_cookie('fontsize', this.value);window.location.reload();}">
+                            <option value="">Bitte w&auml;hlen</option>
+                            <option value="small">Klein</option>
+                            <option value="medium">Mittel</option>
+                            <option value="big">Gro&szlig;</option>
+                        </select>
+                    </li>
+                </ul>
+            <?php endif; ?>
         </div>
 		<?php
             $i = 0;
